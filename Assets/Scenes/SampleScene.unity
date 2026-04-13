@@ -743,6 +743,7 @@ GameObject:
   - component: {fileID: 501688679}
   - component: {fileID: 501688678}
   - component: {fileID: 501688680}
+  - component: {fileID: 501688681}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -796,6 +797,19 @@ MonoBehaviour:
   horizontalInput: 0
   allowToMove: 1
   speed: 10
+--- !u!114 &501688681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501688677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad62f83b35838914586fbe5669a802a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimationManager
+  _animator: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1110115831}
   - component: {fileID: 1110115832}
+  - component: {fileID: 1110115833}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -1460,6 +1475,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &1110115833
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110115830}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f14c9b4cae2be54fa01cb691a0f11b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1128316759
 GameObject:
   m_ObjectHideFlags: 0

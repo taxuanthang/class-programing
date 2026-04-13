@@ -8,7 +8,7 @@ public class PlayerManager : CharacterManager
     [SerializeField] PlayerLocomotionManager _playerLocomotionManager;
     //[SerializeField] PlayerEquipmentManager _playerEquipmentManager;
     //[SerializeField] PlayerHealthManager _playerHealthManager;
-    //[SerializeField] PlayerAnimationManager _playerAnimationManager;
+    [SerializeField] PlayerAnimationManager _playerAnimationManager;
 
 
     public override void Awake()
@@ -17,7 +17,7 @@ public class PlayerManager : CharacterManager
         if (_playerLocomotionManager == null) _playerLocomotionManager = GetComponent<PlayerLocomotionManager>();
         //if (_playerEquipmentManager == null) _playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
         //if (_playerHealthManager == null) _playerHealthManager = GetComponent<PlayerHealthManager>();
-        //if (_playerAnimationManager == null) _playerAnimationManager = GetComponent<PlayerAnimationManager>();
+        if (_playerAnimationManager == null) _playerAnimationManager = GetComponent<PlayerAnimationManager>();
     }
 
     public void HandleMoveInput(int x, int y)
@@ -27,7 +27,7 @@ public class PlayerManager : CharacterManager
         _playerLocomotionManager.verticalInput = y;
 
         //
-        //_playerAnimationManager.UpdateMovingParameter(x, y);
+        _playerAnimationManager.UpdateMovingParameter(x, y);
 
     }
 
