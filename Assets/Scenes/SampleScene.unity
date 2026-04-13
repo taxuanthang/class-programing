@@ -764,6 +764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _playerLocomotionManager: {fileID: 0}
+  _playerAnimationManager: {fileID: 0}
 --- !u!4 &501688679
 Transform:
   m_ObjectHideFlags: 0
@@ -809,7 +810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad62f83b35838914586fbe5669a802a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimationManager
-  _animator: {fileID: 0}
+  _animator: {fileID: 1110115833}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
