@@ -8,7 +8,7 @@ public class InputPlayerManager : MonoBehaviour
     [Header("Input Properties")]
     public Vector2 movingInput;
     //public Vector2 mousePos;
-    //public bool dodgeInput = false;
+    public bool dodgeInput = false;
     //public bool shootInput = false;
 
 
@@ -23,7 +23,7 @@ public class InputPlayerManager : MonoBehaviour
         inputSystem.Player.Move.performed += ctx => movingInput = ctx.ReadValue<Vector2>();
         inputSystem.Player.Move.canceled += ctx => movingInput = ctx.ReadValue<Vector2>();
 
-        //inputSystem.Player.Dodge.performed += ctx => dodgeInput = true;
+        inputSystem.Player.Dodge.performed += ctx => dodgeInput = true;
 
         //inputSystem.Player.Look.performed += ctx => mousePos = ctx.ReadValue<Vector2>();
         //inputSystem.Player.Shoot.performed += ctx => shootInput = true;
@@ -42,7 +42,7 @@ public class InputPlayerManager : MonoBehaviour
     public void Update()
     {
         HandleMoveInput();
-        //HandleDodgeInput();
+        HandleDodgeInput();
         //HandleShootInput();
         //HandleMouse();
     }
@@ -62,15 +62,15 @@ public class InputPlayerManager : MonoBehaviour
 
     }
 
-    //private void HandleDodgeInput()
-    //{
-    //    if (!dodgeInput)
-    //    {
-    //        return;
-    //    }
-    //    dodgeInput = false;
-    //    _playerManager.HandleDodgeInput();
-    //}
+    private void HandleDodgeInput()
+    {
+        if (!dodgeInput)
+        {
+            return;
+        }
+        dodgeInput = false;
+        _playerManager.HandleDodgeInput();
+    }
 
     //private void HandleShootInput()
     //{

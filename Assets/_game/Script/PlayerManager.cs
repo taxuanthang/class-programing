@@ -31,10 +31,10 @@ public class PlayerManager : CharacterManager
 
     }
 
-    //internal void HandleDodgeInput()
-    //{
-    //    StartCoroutine(_playerLocomotionManager.HandleDodge());
-    //}
+    internal void HandleDodgeInput()
+    {
+        StartCoroutine(_playerLocomotionManager.HandleDodge());
+    }
 
     //internal void HandleShootInput(Vector2 lookDir)
     //{
