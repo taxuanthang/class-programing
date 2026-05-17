@@ -18,11 +18,12 @@ public class Gun : MonoBehaviour
             // Logic to shoot the gun
             currentAmmo--;
             // spawn bullet and set its properties based on the gun's properties
-            Bullet newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+                Bullet newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
             newBullet.dir = lookDir.normalized;
             newBullet.damage = damage;
             newBullet.bulletSprite = gunSprite; // Set the bullet's sprite to the gun's sprite
             newBullet.bulletType = bulletType; // Set the bullet type (player or enemy)
+            newBullet.speed = fireRate;
             // nhớ làm object pooling sau để tối ưu hiệu suất thay vì instantiate và destroy bullet liên tục
         }
         else

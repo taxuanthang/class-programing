@@ -7,9 +7,9 @@ public class InputPlayerManager : MonoBehaviour
 
     [Header("Input Properties")]
     public Vector2 movingInput;
-    //public Vector2 mousePos;
+    public Vector2 mousePos;
     public bool dodgeInput = false;
-    //public bool shootInput = false;
+    public bool shootInput = false;
 
 
     private void Awake()
@@ -25,8 +25,8 @@ public class InputPlayerManager : MonoBehaviour
 
         inputSystem.Player.Dodge.performed += ctx => dodgeInput = true;
 
-        //inputSystem.Player.Look.performed += ctx => mousePos = ctx.ReadValue<Vector2>();
-        //inputSystem.Player.Shoot.performed += ctx => shootInput = true;
+        inputSystem.Player.Look.performed += ctx => mousePos = ctx.ReadValue<Vector2>();
+        inputSystem.Player.Shoot.performed += ctx => shootInput = true;
     }
 
     private void OnEnable()
@@ -43,8 +43,8 @@ public class InputPlayerManager : MonoBehaviour
     {
         HandleMoveInput();
         HandleDodgeInput();
-        //HandleShootInput();
-        //HandleMouse();
+        HandleShootInput();
+        HandleMouse();
     }
 
     private void HandleMoveInput()
@@ -72,32 +72,31 @@ public class InputPlayerManager : MonoBehaviour
         _playerManager.HandleDodgeInput();
     }
 
-    //private void HandleShootInput()
-    //{
-    //    if (!shootInput)
-    //    {
-    //        return;
-    //    }
-    //    shootInput = false;
+    private void HandleShootInput()
+    {
+        if (!shootInput)
+        {
+            return;
+        }
+        shootInput = false;
 
-    //    Vector2 lookDir = mousePos - centerScreen;
-    //    lookDir = lookDir.normalized;
-    //    _playerManager.HandleShootInput(lookDir);
-    //}
+        Vector2 lookDir = mousePos - centerScreen;
+        lookDir = lookDir.normalized;
+        _playerManager.HandleShootInput(lookDir);
+    }
 
-    //int width = Screen.width;
-    //int height = Screen.height;
+    int width = Screen.width;
+    int height = Screen.height;
 
-    //Vector2 centerScreen = new Vector2(Screen.width / 2, Screen.height / 2);
-    //private void HandleMouse()
-    //{
-    //    // 2 cách 
-    //    // cách 1: Có vị trí của mouse trên screen thì cast qua world rồi tính vecto ra góc xoay
-    //    // cách 2: tính luôn góc xoay dựa trên vị trí của mouse trên screen, sau đó chuyển góc xoay sang world
-    //    Vector2 lookDir = mousePos - centerScreen;
+    Vector2 centerScreen = new Vector2(Screen.width / 2, Screen.height / 2);
+    private void HandleMouse()
+    {
+        // 2 cách 
+        // cách 1: Có vị trí của mouse trên screen thì cast qua world rồi tính vecto ra góc xoay
+        // cách 2: tính luôn góc xoay dựa trên vị trí của mouse trên screen, sau đó chuyển góc xoay sang world
+        Vector2 lookDir = mousePos - centerScreen;
+        Quaternion lookAngle = Quaternion.FromToRotation(Vector3.right, lookDir);
 
-    //    Quaternion lookAngle = Quaternion.FromToRotation(Vector3.right, lookDir);
-
-    //    _playerManager.HandleMousePos(lookAngle);
-    //}
+        _playerManager.HandleMousePos(lookAngle);
+    }
 }
