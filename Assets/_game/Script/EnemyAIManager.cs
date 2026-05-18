@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using Pathfinding;
 using UnityEngine;
 
@@ -11,8 +12,10 @@ public class EnemyAIManager : MonoBehaviour
 
     public State _meleeAttackState;
 
+    public State _dieState;
+
     // cta cần 1 biến để lưu trạng thái hiện tại của enemy
-    //[Expandable]
+    [Expandable]
     [SerializeField] State _currentState;
 
 
@@ -40,7 +43,9 @@ public class EnemyAIManager : MonoBehaviour
         {
             _currentState.Exit(this);
         }
+
         _currentState = newState;
+
         if (_currentState != null)
         {
             _currentState.Enter(this);
