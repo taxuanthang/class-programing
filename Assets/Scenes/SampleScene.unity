@@ -253,6 +253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 106424564}
+  - component: {fileID: 106424565}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -275,6 +276,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &106424565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106424563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de493870aab93f44a8783147799a49f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAIManager
+  _idleState: {fileID: 11400000, guid: 72fc012d591abc04dbb28410a1c30e4b, type: 2}
+  _chaseState: {fileID: 11400000, guid: e0bb65f2caa0a1b489221457c3ff2a21, type: 2}
+  _meleeAttackState: {fileID: 11400000, guid: 4ef63e98e1d1c3d4a9715854611b5afe, type: 2}
+  _dieState: {fileID: 0}
+  _currentState: {fileID: 0}
+  aiPath: {fileID: 0}
+  seeker: {fileID: 0}
+  destinationSetter: {fileID: 0}
 --- !u!1 &171661785
 GameObject:
   m_ObjectHideFlags: 0
